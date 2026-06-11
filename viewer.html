@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tab Export Viewer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styles specific to the standalone viewer */
+    body {
+      width: 100vw;
+      height: 100vh;
+      max-width: none;
+    }
+    .upload-section {
+      padding: 20px;
+      background: #e8f0fe;
+      text-align: center;
+      border-bottom: 2px dashed #1a73e8;
+    }
+    #file-input {
+      display: none;
+    }
+    .upload-btn {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .upload-btn:hover {
+      background-color: #1557b0;
+    }
+    #search-container {
+      display: none; /* Hidden until file is loaded */
+    }
+    #viewer-container {
+      display: none; /* Hidden until file is loaded */
+      flex: 1;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-section" id="upload-area">
+    <h2>Tab Export Viewer</h2>
+    <p>Select your exported <code>.json</code> file to view and filter your tabs.</p>
+    <label for="file-input" class="upload-btn">Choose JSON File</label>
+    <input type="file" id="file-input" accept=".json">
+  </div>
+
+  <div class="header" id="search-container">
+    <h1>Tab Export Viewer</h1>
+    <div class="search-wrapper">
+      <input type="text" id="search" placeholder="Search tabs by title or URL...">
+      <button id="clear-search">Clear</button>
+    </div>
+  </div>
+
+  <div class="main-container" id="viewer-container">
+    <div id="tab-list" class="scrollable">
+      <!-- Grouped tabs will be injected here -->
+    </div>
+    <div id="tag-sidebar" class="sidebar">
+      <h3>Tags</h3>
+      <div id="tag-list">
+        <!-- Tags will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="viewer.js"></script>
+</body>
+</html>

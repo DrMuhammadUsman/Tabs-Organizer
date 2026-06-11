@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Export Tabs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <input type="text" id="search" placeholder="Search tabs by title or URL...">
+  </div>
+
+  <div class="main-container">
+    <div id="tab-list" class="scrollable">
+      <!-- Grouped tabs will be injected here -->
+    </div>
+    <div id="tag-sidebar" class="sidebar">
+      <h3>Tags</h3>
+      <div id="tag-list">
+        <!-- Tags will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="export">Export Visible Tabs</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

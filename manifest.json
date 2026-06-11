@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Export Open Tabs",
+  "version": "1.0",
+  "description": "Export open Chrome tab titles and URLs",
+  "permissions": ["tabs", "downloads"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
